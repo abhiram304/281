@@ -5,10 +5,10 @@ var mysql = require('mysql');
 function getConnection(){
 	var pool = mysql.createPool({
 	    connectionLimit : 100,
-		host     : 'deary.c8be4rywp9ft.us-west-2.rds.amazonaws.com',
-	    user     : 'deary',
-	    password : 'BestHack',
-	    database : 'deary',
+		host     : 'mscloud.cebhipmbjvsw.us-west-2.rds.amazonaws.com',
+	    user     : 'mscloud',
+	    password : 'password',
+	    database : 'mscloud',
 	    port	 : 3306
 	});
 	return pool;
