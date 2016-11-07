@@ -1,8 +1,8 @@
 
 var mysql = require('./mysql');
 exports.index1 = function(req, res){
-	var lat=req.body.Lat;
-	var lng=req.body.Lng;
+	var lat=req.param("Lat");
+	var lng=req.param("Lng");
 	var queryStr = "INSERT INTO Location VALUES('"+lat+"', '"+lng+"')";
 	mysql.fetchData(function(err, results) {
 		if (err) {
