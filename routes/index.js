@@ -7,12 +7,7 @@ var mysql = require('./mysql');
 exports.index = function(req, res){
 	var lat=req.body.Lat;
 	var lng=req.body.Lng;
-	/*var queryStr = "INSERT INTO User VALUES('" + detailsP.UserId + "', '"
-	+ detailsP.UserName + "', '" + detailsP.Password + "', '"
-	+ shortid.generate() + "', '" + detailsP.PrimaryTenant + "', '"
-	+ detailsP.Age + "', '" + detailsP.Gender + "', '"
-	+ Number(detailsP.Contact) + "', '" + Number(detailsP.Emergencyc)
-	+ "')";
+	var queryStr = "INSERT INTO Location VALUES('"+lat+"', '"+lng+"')";
 	mysql.fetchData(function(err, results) {
 		if (err) {
 			console.log("Error in db connection: "+err);
@@ -21,7 +16,7 @@ exports.index = function(req, res){
 			res.render('home', { title: lat });
 			res.send({dataSaved: true});
 		}
-	}, queryStr);*/
+	}, queryStr);
 	console.log("The api is hit: "+lat);
-	res.render('home', { title: lat });
+	//res.render('home', { title: lat });
 };
