@@ -8,7 +8,7 @@ var express = require('express')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
-
+var point=require('./routes/location');
 var app = express();
 
 // all environments
@@ -28,6 +28,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/postlocation', point.index1);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
