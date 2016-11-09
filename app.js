@@ -9,7 +9,9 @@ var express = require('express')
   , http = require('http')
   , path = require('path');
 var point=require('./routes/location');
+var mapPointer=require('./routes/showMap');
 var app = express();
+
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -27,7 +29,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
+app.get('/', mapPointer.showMap);
 app.get('/postlocation', point.index1);
 app.get('/users', user.list);
 
